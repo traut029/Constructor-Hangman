@@ -15,13 +15,13 @@ var startUp = function () {
     //Guesses left
     var guesses = 10;
     //print inital hidden word
-    console.log(word.displayString)
+    console.log(word.displayString+"\n")
 
 
 //inquirer prompt
 var userGuessLetter = function () {
     if (!word.displayString.includes("_")) {
-        console.log("YOU WIN! NEXT WORD!")
+        console.log("\nYOU WIN! NEXT WORD!\n")
         //initiate restart up function
         startUp();
     }
@@ -47,12 +47,14 @@ var userGuessLetter = function () {
                     //subtract from guesses
                     guesses--;
                     //console log incorrect
-                    console.log("INCORRECT!")
+                    console.log("\nINCORRECT!\n")
                     //console log the number of guesses left
-                    console.log(guesses + " guesses left!")
+                    console.log(guesses + " guesses left!\n")
                 }
-
-                console.log(word.displayString)
+                else{
+                    console.log("\nCORRECT!\n")
+                }
+                console.log(word.displayString+"\n")
 
                 //run userGuessLetter function again
                 userGuessLetter();
@@ -60,7 +62,7 @@ var userGuessLetter = function () {
     }
     else {
 
-        console.log("You lose! The correct answer was " + word.word + "! NEXT WORD!")
+        console.log("You lose! The correct answer was " + word.word + "! NEXT WORD!\n")
         //initiate retart function
         startUp();
     }
